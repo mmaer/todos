@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import { useTodos } from "./reducer/actions";
 import reducer from "./reducer";
 import initialState from "./reducer/initialState";
@@ -9,7 +9,7 @@ import TodoList from "./components/TodoList";
 import Footer from "./components/Footer";
 import ToggleCompletedStatuses from "./components/ToggleCompletedStatuses";
 
-import { LOCAL_STORAGE_KEY, FILTERS, FILTER_ALL } from "./constants";
+import { LOCAL_STORAGE_KEY, FILTERS } from "./constants";
 
 import "./App.scss";
 
@@ -32,17 +32,6 @@ const App = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
   }, [state]);
 
-  const [filter, setFilter] = useState(FILTER_ALL);
-
-  useEffect(() => {
-    const pathname = window.location.pathname.slice(1);
-    if (FILTERS.includes(pathname)) {
-      setFilter(pathname);
-    } else {
-      setFilter(FILTER_ALL);
-    }
-  }, []);
-
   const { todos } = state;
 
   return (
@@ -58,21 +47,22 @@ const App = () => {
               todos={todos}
               toggleCompletedStatuses={toggleCompletedStatuses}
             />
-            <TodoList
-              todos={todos}
-              filter={filter}
-              editTodoTitle={editTodoTitle}
-              removeTodo={removeTodo}
-              toggleCompletedStatus={toggleCompletedStatus}
-              toggleEditingStatus={toggleEditingStatus}
-            />
+            <Switch>
+              {FILTERS.map(filter => (
+                <Route path={`/${filter}`} key={`todo-list-${filter}`}>
+                  <TodoList
+                    todos={todos}
+                    filter={filter}
+                    editTodoTitle={editTodoTitle}
+                    removeTodo={removeTodo}
+                    toggleCompletedStatus={toggleCompletedStatus}
+                    toggleEditingStatus={toggleEditingStatus}
+                  />
+                </Route>
+              ))}
+            </Switch>
           </section>
-          <Footer
-            todos={todos}
-            filter={filter}
-            setFilter={setFilter}
-            removeCompletedTodos={removeCompletedTodos}
-          />
+          <Footer todos={todos} removeCompletedTodos={removeCompletedTodos} />
         </>
       )}
     </div>

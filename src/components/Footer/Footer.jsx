@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import Filters from "./Filters";
 
@@ -6,7 +6,7 @@ import { filterActiveTodo, filterCompletedTodo } from "../../utils";
 
 import "./Footer.scss";
 
-const Footer = ({ todos, filter, setFilter, removeCompletedTodos }) => {
+const Footer = memo(({ todos, removeCompletedTodos }) => {
   return (
     <footer className="footer">
       <span className="footer__todo-count">
@@ -16,7 +16,7 @@ const Footer = ({ todos, filter, setFilter, removeCompletedTodos }) => {
         </strong>
         items left
       </span>
-      <Filters filter={filter} setFilter={setFilter} />
+      <Filters />
       {!!todos.filter(filterCompletedTodo).length && (
         <button
           onClick={removeCompletedTodos}
@@ -27,6 +27,6 @@ const Footer = ({ todos, filter, setFilter, removeCompletedTodos }) => {
       )}
     </footer>
   );
-};
+});
 
 export default Footer;

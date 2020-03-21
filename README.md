@@ -2,5 +2,4 @@
 
 ## TODO
 
-- [ ] Use React Router instead "a" tag
 - [ ] Add unit tests

@@ -1,23 +1,21 @@
 import React, { memo } from "react";
-import classnames from "classnames";
+import { NavLink } from "react-router-dom";
 
 import { FILTERS } from "../../../constants";
 
 import "./Filters.scss";
 
-const Filters = memo(({ setFilter, filter }) => (
+const Filters = memo(() => (
   <ul className="filters">
     {FILTERS.map((link, index) => (
-      <li key={index} className="filters__filter">
-        <a
-          href={`/${link}`}
-          className={classnames("filters__link", {
-            "filters__link--selected": filter === link
-          })}
-          onClick={() => setFilter(link)}
+      <li key={`filter-${index}`} className="filters__filter">
+        <NavLink
+          className="filters__link"
+          activeClassName="filters__link--selected"
+          to={`/${link}`}
         >
           {link[0].toUpperCase() + link.slice(1)}
-        </a>
+        </NavLink>
       </li>
     ))}
   </ul>
