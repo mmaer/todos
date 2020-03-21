@@ -40,6 +40,7 @@ const TodoEdit = memo(
         onBlur={save}
         value={value}
         onChange={handleOnChange}
+        autoFocus
       />
     );
   }
