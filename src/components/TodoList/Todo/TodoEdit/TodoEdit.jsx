@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-import { ENTER_KEY, ESCAPE_KEY } from "../constants";
+import { ENTER_KEY, ESCAPE_KEY } from "../../../../constants";
 
-const TodoInlineInput = ({
+import "./TodoEdit.scss";
+
+const TodoEdit = ({
   todo,
   id,
   removeTodo,
@@ -39,7 +41,7 @@ const TodoInlineInput = ({
 
   return (
     <input
-      className="edit"
+      className="todo-editing"
       onKeyUp={handleKeys}
       onBlur={save}
       value={value}
@@ -48,4 +50,4 @@ const TodoInlineInput = ({
   );
 };
 
-export default TodoInlineInput;
+export default TodoEdit;

@@ -1,4 +1,7 @@
 import React from "react";
+import classNames from "classnames";
+
+import "./TodoView.scss";
 
 const TodoView = ({
   todo,
@@ -13,16 +16,20 @@ const TodoView = ({
   const toggleCompleted = () => toggleCompletedStatus(id);
   const remove = () => removeTodo(id);
 
+  const labelClassNames = classNames("todo-view__label", {
+    "todo-view__label--completed": completed
+  });
+
   return (
-    <div className="view" onDoubleClick={toggleEditing}>
+    <div className="todo-view" onDoubleClick={toggleEditing}>
       <input
         type="checkbox"
-        className="toggle"
+        className="todo-view__toggle"
         checked={completed}
         onChange={toggleCompleted}
       />
-      <label>{title}</label>
-      <button className="destroy" onClick={remove} />
+      <label className={labelClassNames}>{title}</label>
+      <button className="todo-view__remove" onClick={remove} />
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import React from "react";
 import Todo from "./Todo";
 
-import { FILTER_ACTIVE, FILTER_COMPLETED, FILTER_ALL } from "../constants";
+import { FILTER_ACTIVE, FILTER_COMPLETED, FILTER_ALL } from "../../constants";
+
+import "./TodoList.scss";
 
 const FILTERS = {
   [FILTER_ACTIVE]: completed => !completed,

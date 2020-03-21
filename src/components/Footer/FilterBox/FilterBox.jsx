@@ -1,15 +1,19 @@
 import React from "react";
 import classnames from "classnames";
 
-import { FILTERS } from "../constants";
+import { FILTERS } from "../../../constants";
+
+import "./FilterBox.scss";
 
 const FilterBox = ({ setFilter, filter }) => (
   <ul className="filters">
     {FILTERS.map((link, index) => (
-      <li key={index}>
+      <li key={index} className="filters__filter">
         <a
           href={`/${link}`}
-          className={classnames({ selected: filter === link })}
+          className={classnames("filters__link", {
+            "filters__link--selected": filter === link
+          })}
           onClick={() => setFilter(link)}
         >
           {link[0].toUpperCase() + link.slice(1)}

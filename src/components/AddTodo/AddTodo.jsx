@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-import { ENTER_KEY } from "../constants";
+import { ENTER_KEY } from "../../constants";
 
-const MainInput = ({ addTodo }) => {
+import "./AddTodo.scss";
+
+const AddTodo = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleOnChange = ({ target }) => {
@@ -25,7 +27,7 @@ const MainInput = ({ addTodo }) => {
 
   return (
     <input
-      className="new-todo"
+      className="add-todo"
       placeholder="What needs to be done?"
       onKeyPress={handleEnter}
       onChange={handleOnChange}
@@ -34,4 +36,4 @@ const MainInput = ({ addTodo }) => {
   );
 };
 
-export default MainInput;
+export default AddTodo;
