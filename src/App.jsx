@@ -7,7 +7,7 @@ import initialState from "./reducer/initialState";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Footer from "./components/Footer";
-import ToggleAll from "./components/ToggleAll";
+import ToggleCompletedStatuses from "./components/ToggleCompletedStatuses";
 
 import { LOCAL_STORAGE_KEY, FILTERS, FILTER_ALL } from "./constants";
 
@@ -21,7 +21,8 @@ const App = () => {
     toggleCompletedStatus,
     toggleEditingStatus,
     editTodoTitle,
-    removeCompletedTodos
+    removeCompletedTodos,
+    toggleCompletedStatuses
   } = useTodos(
     JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || initialState,
     reducer
@@ -53,7 +54,10 @@ const App = () => {
       {!!todos.length && (
         <>
           <section className="app__main">
-            <ToggleAll />
+            <ToggleCompletedStatuses
+              todos={todos}
+              toggleCompletedStatuses={toggleCompletedStatuses}
+            />
             <TodoList
               todos={todos}
               filter={filter}

@@ -6,7 +6,8 @@ import {
   TOGGLE_COMPLETED_STATUS,
   TOGGLE_EDITING_STATUS,
   EDIT_TODO_TITLE,
-  REMOVE_COMPLETED_TODOS
+  REMOVE_COMPLETED_TODOS,
+  TOGGLE_COMPLETED_STATUSES
 } from "./constants";
 
 const editTodo = (state, id, action) => [
@@ -39,6 +40,10 @@ const ACTIONS = {
   [REMOVE_COMPLETED_TODOS]: state => ({
     ...state,
     todos: state.todos.filter(filterActiveTodo)
+  }),
+  [TOGGLE_COMPLETED_STATUSES]: (state, { completed }) => ({
+    ...state,
+    todos: state.todos.map(todo => ({ ...todo, completed }))
   })
 };
 

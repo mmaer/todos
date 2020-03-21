@@ -6,7 +6,8 @@ import {
   TOGGLE_COMPLETED_STATUS,
   TOGGLE_EDITING_STATUS,
   EDIT_TODO_TITLE,
-  REMOVE_COMPLETED_TODOS
+  REMOVE_COMPLETED_TODOS,
+  TOGGLE_COMPLETED_STATUSES
 } from "./constants";
 
 export const useTodos = (initialState, reducer) => {
@@ -27,6 +28,9 @@ export const useTodos = (initialState, reducer) => {
 
   const removeCompletedTodos = () => dispatch({ type: REMOVE_COMPLETED_TODOS });
 
+  const toggleCompletedStatuses = completed =>
+    dispatch({ type: TOGGLE_COMPLETED_STATUSES, completed });
+
   return {
     state,
     addTodo,
@@ -34,6 +38,7 @@ export const useTodos = (initialState, reducer) => {
     toggleCompletedStatus,
     toggleEditingStatus,
     editTodoTitle,
-    removeCompletedTodos
+    removeCompletedTodos,
+    toggleCompletedStatuses
   };
 };
