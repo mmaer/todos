@@ -1,6 +1,6 @@
 import React from "react";
 
-import FilterBox from "./FilterBox";
+import Filters from "./Filters";
 
 import { filterActiveTodo, filterCompletedTodo } from "../../utils";
 
@@ -16,7 +16,7 @@ const Footer = ({ todos, filter, setFilter, removeCompletedTodos }) => {
         </strong>
         items left
       </span>
-      <FilterBox filter={filter} setFilter={setFilter} />
+      <Filters filter={filter} setFilter={setFilter} />
       {!!todos.filter(filterCompletedTodo).length && (
         <button
           onClick={removeCompletedTodos}

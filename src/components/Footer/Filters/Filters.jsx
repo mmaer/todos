@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import classnames from "classnames";
 
 import { FILTERS } from "../../../constants";
 
-import "./FilterBox.scss";
+import "./Filters.scss";
 
-const FilterBox = ({ setFilter, filter }) => (
+const Filters = memo(({ setFilter, filter }) => (
   <ul className="filters">
     {FILTERS.map((link, index) => (
       <li key={index} className="filters__filter">
@@ -21,6 +21,6 @@ const FilterBox = ({ setFilter, filter }) => (
       </li>
     ))}
   </ul>
-);
+));
 
-export default FilterBox;
+export default Filters;

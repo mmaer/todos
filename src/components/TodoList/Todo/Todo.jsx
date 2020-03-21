@@ -1,18 +1,18 @@
-import React from "react";
+import React, { memo } from "react";
 
-import TodoInlineInput from "./TodoEdit";
+import TodoEdit from "./TodoEdit";
 import TodoView from "./TodoView";
 
 import "./Todo.scss";
 
-const Todo = ({ editTodoTitle, toggleCompletedStatus, ...props }) => (
+const Todo = memo(({ editTodoTitle, toggleCompletedStatus, ...props }) => (
   <li className="todo">
-    {props.todo.editing ? (
-      <TodoInlineInput {...props} editTodoTitle={editTodoTitle} />
+    {props.editing ? (
+      <TodoEdit {...props} editTodoTitle={editTodoTitle} />
     ) : (
       <TodoView {...props} toggleCompletedStatus={toggleCompletedStatus} />
     )}
   </li>
-);
+));
 
 export default Todo;

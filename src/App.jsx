@@ -24,8 +24,8 @@ const App = () => {
     removeCompletedTodos,
     toggleCompletedStatuses
   } = useTodos(
-    JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || initialState,
-    reducer
+    reducer,
+    JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || initialState
   );
 
   useEffect(() => {

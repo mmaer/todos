@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 
 import { ENTER_KEY } from "../../constants";
 
 import "./AddTodo.scss";
 
-const AddTodo = ({ addTodo }) => {
+const AddTodo = memo(({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleOnChange = ({ target }) => {
@@ -34,6 +34,6 @@ const AddTodo = ({ addTodo }) => {
       value={value}
     />
   );
-};
+});
 
 export default AddTodo;

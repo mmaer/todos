@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 
 import "./ToggleCompletedStatuses.scss";
 
-const ToggleCompletedStatuses = ({ toggleCompletedStatuses, todos }) => {
+const ToggleCompletedStatuses = memo(({ toggleCompletedStatuses, todos }) => {
   const toggle = ({ target }) => {
     toggleCompletedStatuses(target.checked);
   };
@@ -21,6 +21,6 @@ const ToggleCompletedStatuses = ({ toggleCompletedStatuses, todos }) => {
       <label htmlFor="toggle-completed-statuses">Mark all as complete</label>
     </>
   );
-};
+});
 
 export default ToggleCompletedStatuses;

@@ -10,7 +10,7 @@ import {
   TOGGLE_COMPLETED_STATUSES
 } from "./constants";
 
-export const useTodos = (initialState, reducer) => {
+export const useTodos = (reducer, initialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const addTodo = value => dispatch({ type: ADD_TODO, value });

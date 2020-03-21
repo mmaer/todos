@@ -11,12 +11,12 @@ const FILTERS = {
   [FILTER_ALL]: () => true
 };
 
-const TodoList = ({ filter, ...props }) => (
+const TodoList = ({ filter, todos, ...props }) => (
   <ul className="todo-list">
-    {props.todos
+    {todos
       .filter(({ completed }) => FILTERS[filter](completed))
       .map((todo, id) => (
-        <Todo {...props} todo={todo} id={id} key={id} />
+        <Todo {...props} {...todo} id={id} key={id} />
       ))}
   </ul>
 );
