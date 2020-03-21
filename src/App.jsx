@@ -9,7 +9,7 @@ import TodoList from "./components/TodoList";
 import Footer from "./components/Footer";
 import ToggleCompletedStatuses from "./components/ToggleCompletedStatuses";
 
-import { LOCAL_STORAGE_KEY, FILTERS } from "./constants";
+import { LOCAL_STORAGE_KEY, FILTERS, FILTER_ALL } from "./constants";
 
 import "./App.scss";
 
@@ -17,12 +17,9 @@ const App = () => {
   const {
     state,
     addTodo,
-    removeTodo,
-    toggleCompletedStatus,
-    toggleEditingStatus,
-    editTodoTitle,
     removeCompletedTodos,
-    toggleCompletedStatuses
+    toggleCompletedStatuses,
+    ...actions
   } = useTodos(
     reducer,
     JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || initialState
@@ -48,16 +45,12 @@ const App = () => {
               toggleCompletedStatuses={toggleCompletedStatuses}
             />
             <Switch>
+              <Route path="/" exact>
+                <TodoList todos={todos} filter={FILTER_ALL} {...actions} />
+              </Route>
               {FILTERS.map(filter => (
                 <Route path={`/${filter}`} key={`todo-list-${filter}`}>
-                  <TodoList
-                    todos={todos}
-                    filter={filter}
-                    editTodoTitle={editTodoTitle}
-                    removeTodo={removeTodo}
-                    toggleCompletedStatus={toggleCompletedStatus}
-                    toggleEditingStatus={toggleEditingStatus}
-                  />
+                  <TodoList todos={todos} filter={filter} {...actions} />
                 </Route>
               ))}
             </Switch>
