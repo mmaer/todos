@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Should match snapshot 1`] = `
+<footer
+  className="footer"
+>
+  <span
+    className="footer__todo-count"
+  >
+    <strong>
+      2
+       
+    </strong>
+    items left
+  </span>
+  <Memo() />
+  <button
+    className="footer__clear-completed"
+    onClick={[Function]}
+  >
+    Clear completed
+  </button>
+</footer>
+`;

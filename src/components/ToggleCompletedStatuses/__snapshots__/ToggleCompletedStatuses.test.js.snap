@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleCompletedStatuses component Should match snapshot 1`] = `
+<Fragment>
+  <input
+    checked={false}
+    className="toggle-completed-statuses"
+    id="toggle-completed-statuses"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    htmlFor="toggle-completed-statuses"
+  >
+    Mark all as complete
+  </label>
+</Fragment>
+`;

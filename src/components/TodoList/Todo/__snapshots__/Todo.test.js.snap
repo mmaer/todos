@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo component Should match TodoEdit snapshot 1`] = `
+<Memo()
+  editing={true}
+>
+  <li
+    className="todo"
+  >
+    <Memo()
+      editing={true}
+    >
+      <input
+        autoFocus={true}
+        className="todo-editing"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyUp={[Function]}
+      />
+    </Memo()>
+  </li>
+</Memo()>
+`;
+
+exports[`Todo component Should match TodoView snapshot 1`] = `
+<Memo()
+  editing={false}
+>
+  <li
+    className="todo"
+  >
+    <Memo()
+      editing={false}
+    >
+      <div
+        className="todo-view"
+        onDoubleClick={[Function]}
+      >
+        <input
+          className="todo-view__toggle"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="todo-view__label"
+        />
+        <button
+          className="todo-view__remove"
+          onClick={[Function]}
+        />
+      </div>
+    </Memo()>
+  </li>
+</Memo()>
+`;

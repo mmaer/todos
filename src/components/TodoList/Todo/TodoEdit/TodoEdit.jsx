@@ -12,7 +12,7 @@ const TodoEdit = memo(
       setValue(target.value);
     };
 
-    const save = () => {
+    const saveTodo = () => {
       if (editing) {
         if (value === "") {
           removeTodo(id);
@@ -26,7 +26,7 @@ const TodoEdit = memo(
     const handleKeys = event => {
       event.persist();
       if (event.keyCode === ENTER_KEY) {
-        save();
+        saveTodo();
       } else if (event.keyCode === ESCAPE_KEY) {
         setValue(title);
         toggleEditingStatus(id);
@@ -37,7 +37,7 @@ const TodoEdit = memo(
       <input
         className="todo-editing"
         onKeyUp={handleKeys}
-        onBlur={save}
+        onBlur={saveTodo}
         value={value}
         onChange={handleOnChange}
         autoFocus

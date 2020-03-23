@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoView component Should match snapshot 1`] = `
+<div
+  className="todo-view"
+  onDoubleClick={[Function]}
+>
+  <input
+    checked={false}
+    className="todo-view__toggle"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="todo-view__label"
+  >
+    title
+  </label>
+  <button
+    className="todo-view__remove"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`TodoView component Should match snapshot when todo is completed 1`] = `
+<div
+  className="todo-view"
+  onDoubleClick={[Function]}
+>
+  <input
+    checked={true}
+    className="todo-view__toggle"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="todo-view__label todo-view__label--completed"
+  >
+    title
+  </label>
+  <button
+    className="todo-view__remove"
+    onClick={[Function]}
+  />
+</div>
+`;

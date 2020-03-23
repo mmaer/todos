@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTodo component Should match snapshot 1`] = `
+<input
+  className="add-todo"
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  placeholder="What needs to be done?"
+  value=""
+/>
+`;

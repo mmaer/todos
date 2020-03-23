@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters component Should match snapshot 1`] = `
+<ul
+  className="filters"
+>
+  <li
+    className="filters__filter"
+    key="filter-0"
+  >
+    <NavLink
+      activeClassName="filters__link--selected"
+      className="filters__link"
+      to="/all"
+    >
+      All
+    </NavLink>
+  </li>
+  <li
+    className="filters__filter"
+    key="filter-1"
+  >
+    <NavLink
+      activeClassName="filters__link--selected"
+      className="filters__link"
+      to="/active"
+    >
+      Active
+    </NavLink>
+  </li>
+  <li
+    className="filters__filter"
+    key="filter-2"
+  >
+    <NavLink
+      activeClassName="filters__link--selected"
+      className="filters__link"
+      to="/completed"
+    >
+      Completed
+    </NavLink>
+  </li>
+</ul>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoEdit component Should match snapshot 1`] = `
+<Memo()
+  completed={false}
+  editTodoTitle={[MockFunction]}
+  editing={true}
+  id={1}
+  removeTodo={[MockFunction]}
+  title="title"
+  toggleEditingStatus={[MockFunction]}
+>
+  <input
+    autoFocus={true}
+    className="todo-editing"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    value="title"
+  />
+</Memo()>
+`;
