@@ -35,4 +35,14 @@ describe("AddTodo component", () => {
 
     expect(mockAddTodoFunc.mock.calls.length).toBe(0);
   });
+
+  it("Should not add new todo when pressed key is not enter key", () => {
+    const mockAddTodoFunc = jest.fn();
+    const wrapper = mount(<AddTodo addTodo={mockAddTodoFunc} />);
+    const input = wrapper.find("input");
+
+    input.simulate("keyPress", { persist: () => {}, which: 10 });
+
+    expect(mockAddTodoFunc.mock.calls.length).toBe(0);
+  });
 });

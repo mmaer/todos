@@ -13,7 +13,7 @@ import {
 export const useTodos = (reducer, initialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addTodo = value => dispatch({ type: ADD_TODO, value });
+  const addTodo = newTodo => dispatch({ type: ADD_TODO, newTodo });
 
   const removeTodo = id => dispatch({ type: REMOVE_TODO, id });
 
