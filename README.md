@@ -7,5 +7,4 @@
 - [ ] Automate versioning
 - [ ] Write End to End tests (cypress)
 - [ ] Write performance tests (ligthouse)
-- [ ] Add storybook
 - [ ] Rewrite app to TypeScript
