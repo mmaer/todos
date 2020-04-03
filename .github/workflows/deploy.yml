@@ -37,20 +37,24 @@ jobs:
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+
           git pull
+
           npm config set git-tag-version false
           npm version ${{ steps.branch_name.outputs.VERSION }}
+
           git add -u
           git commit -m "Incremented version number to ${{ steps.branch_name.outputs.VERSION }}"
+          
           git checkout master
           git merge --no-ff ${{ steps.branch_name.outputs.BRANCH_NAME }}
-      - run: |
           git push origin master
+          
           git tag -a ${{ steps.branch_name.outputs.VERSION }} -m "Releasing ${{ steps.branch_name.outputs.VERSION }}"
           git push origin ${{ steps.branch_name.outputs.VERSION }}
-          git push --delete origin ${{ steps.branch_name.outputs.SOURCE_NAME }}
-          git branch -D ${{ steps.branch_name.outputs.SOURCE_NAME }}
-
+          
+          git push --delete origin ${{ steps.branch_name.outputs.BRANCH_NAME }}
+          git branch -D ${{ steps.branch_name.outputs.BRANCH_NAME }}
 
   deploy:
     needs: [ test, version ]
