@@ -79,7 +79,7 @@ jobs:
     - name: Audit live URL
       uses: jakejarvis/lighthouse-action@master
       with:
-        url: ${{ deploy_to_now.steps.now.outputs.preview-url }}
+        url: ${{ steps.now.outputs.preview-url }}
     - name: Upload results as an artifact
       uses: actions/upload-artifact@master
       with:
