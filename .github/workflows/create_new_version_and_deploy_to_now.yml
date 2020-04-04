@@ -71,17 +71,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           now-org-id: ${{ secrets.ORG_ID}}
           now-project-id: ${{ secrets.PROJECT_ID}} 
-
-  lighthouse_check:
-    needs: [ unit_tests, create_new_version, deploy_to_now ]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Audit live URL
-      uses: jakejarvis/lighthouse-action@master
-      with:
-        url: ${{ steps.now.outputs.preview-url }}
-    - name: Upload results as an artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: report
-        path: './report'
+      - name: Audit live URL
+        uses: jakejarvis/lighthouse-action@master
+        with:
+          url: ${{ steps.now.outputs.preview-url }}
+      - name: Upload results as an artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: report
+          path: './report'
