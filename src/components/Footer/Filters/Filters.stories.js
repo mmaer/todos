@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import Filters from ".";
 
 export default {
-  title: "Filters"
+  title: "Filters",
 };
 
 export const filters = () => (

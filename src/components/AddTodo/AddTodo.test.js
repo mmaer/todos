@@ -22,7 +22,7 @@ describe("AddTodo component", () => {
     expect(mockAddTodoFunc).toBeCalledWith({
       completed: false,
       editing: false,
-      title: "new-todo"
+      title: "new-todo",
     });
   });
 

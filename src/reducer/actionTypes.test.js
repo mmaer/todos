@@ -5,7 +5,7 @@ import {
   TOGGLE_EDITING_STATUS,
   EDIT_TODO_TITLE,
   REMOVE_COMPLETED_TODOS,
-  TOGGLE_COMPLETED_STATUSES
+  TOGGLE_COMPLETED_STATUSES,
 } from "./constants";
 import initialState from "./initialState";
 import reducer from "./";
@@ -14,13 +14,13 @@ describe("ActionsTypes", () => {
   const newTodo = {
     value: "new-todo",
     completed: false,
-    editing: false
+    editing: false,
   };
 
   it("Should add new todo to state", () => {
     const action = reducer(initialState, {
       type: ADD_TODO,
-      newTodo
+      newTodo,
     });
     expect(action).toEqual({ todos: [newTodo] });
   });
@@ -30,7 +30,7 @@ describe("ActionsTypes", () => {
       { todos: [newTodo] },
       {
         type: REMOVE_TODO,
-        id: 0
+        id: 0,
       }
     );
     expect(action).toEqual(initialState);
@@ -41,7 +41,7 @@ describe("ActionsTypes", () => {
       { todos: [newTodo] },
       {
         type: TOGGLE_COMPLETED_STATUS,
-        id: 0
+        id: 0,
       }
     );
     expect(action).toEqual({ todos: [{ ...newTodo, completed: true }] });
@@ -52,7 +52,7 @@ describe("ActionsTypes", () => {
       { todos: [newTodo] },
       {
         type: TOGGLE_EDITING_STATUS,
-        id: 0
+        id: 0,
       }
     );
     expect(action).toEqual({ todos: [{ ...newTodo, editing: true }] });
@@ -65,7 +65,7 @@ describe("ActionsTypes", () => {
       {
         type: EDIT_TODO_TITLE,
         id: 0,
-        title
+        title,
       }
     );
     expect(action).toEqual({ todos: [{ ...newTodo, title }] });
@@ -77,12 +77,12 @@ describe("ActionsTypes", () => {
       newTodo,
       { ...newTodo, completed: true },
       newTodo,
-      { ...newTodo, completed: true }
+      { ...newTodo, completed: true },
     ];
     const action = reducer(
       { todos },
       {
-        type: REMOVE_COMPLETED_TODOS
+        type: REMOVE_COMPLETED_TODOS,
       }
     );
     expect(action.todos.length).toBe(3);
@@ -94,14 +94,14 @@ describe("ActionsTypes", () => {
       { todos },
       {
         type: TOGGLE_COMPLETED_STATUSES,
-        completed: true
+        completed: true,
       }
     );
     expect(action).toEqual({
       todos: [
         { ...newTodo, completed: true },
-        { ...newTodo, completed: true }
-      ]
+        { ...newTodo, completed: true },
+      ],
     });
   });
 });

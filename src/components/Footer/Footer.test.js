@@ -6,7 +6,7 @@ import Footer from "./";
 
 const TODOS = [{ completed: false }, { completed: false }, { completed: true }];
 
-const mountWithRouter = Component => <MemoryRouter>{Component}</MemoryRouter>;
+const mountWithRouter = (Component) => <MemoryRouter>{Component}</MemoryRouter>;
 
 describe("Footer component", () => {
   it("Should match snapshot", () => {

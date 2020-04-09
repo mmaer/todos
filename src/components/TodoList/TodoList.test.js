@@ -12,7 +12,7 @@ const TODOS = [
   { completed: false },
   { completed: true },
   { completed: false },
-  { completed: false }
+  { completed: false },
 ];
 
 describe("TodoList component", () => {

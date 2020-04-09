@@ -6,9 +6,9 @@ import { FILTER_ACTIVE, FILTER_COMPLETED, FILTER_ALL } from "../../constants";
 import "./TodoList.scss";
 
 const FILTERS = {
-  [FILTER_ACTIVE]: completed => !completed,
-  [FILTER_COMPLETED]: completed => completed,
-  [FILTER_ALL]: () => true
+  [FILTER_ACTIVE]: (completed) => !completed,
+  [FILTER_COMPLETED]: (completed) => completed,
+  [FILTER_ALL]: () => true,
 };
 
 const TodoList = ({ filter, todos, ...props }) => (

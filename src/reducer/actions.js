@@ -7,20 +7,20 @@ import {
   TOGGLE_EDITING_STATUS,
   EDIT_TODO_TITLE,
   REMOVE_COMPLETED_TODOS,
-  TOGGLE_COMPLETED_STATUSES
+  TOGGLE_COMPLETED_STATUSES,
 } from "./constants";
 
 export const useTodos = (reducer, initialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addTodo = newTodo => dispatch({ type: ADD_TODO, newTodo });
+  const addTodo = (newTodo) => dispatch({ type: ADD_TODO, newTodo });
 
-  const removeTodo = id => dispatch({ type: REMOVE_TODO, id });
+  const removeTodo = (id) => dispatch({ type: REMOVE_TODO, id });
 
-  const toggleCompletedStatus = id =>
+  const toggleCompletedStatus = (id) =>
     dispatch({ type: TOGGLE_COMPLETED_STATUS, id });
 
-  const toggleEditingStatus = id =>
+  const toggleEditingStatus = (id) =>
     dispatch({ type: TOGGLE_EDITING_STATUS, id });
 
   const editTodoTitle = (id, title) =>
@@ -28,7 +28,7 @@ export const useTodos = (reducer, initialState) => {
 
   const removeCompletedTodos = () => dispatch({ type: REMOVE_COMPLETED_TODOS });
 
-  const toggleCompletedStatuses = completed =>
+  const toggleCompletedStatuses = (completed) =>
     dispatch({ type: TOGGLE_COMPLETED_STATUSES, completed });
 
   return {
@@ -39,6 +39,6 @@ export const useTodos = (reducer, initialState) => {
     toggleEditingStatus,
     editTodoTitle,
     removeCompletedTodos,
-    toggleCompletedStatuses
+    toggleCompletedStatuses,
   };
 };

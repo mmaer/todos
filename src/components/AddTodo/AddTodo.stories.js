@@ -3,7 +3,7 @@ import React from "react";
 import AddTodo from ".";
 
 export default {
-  title: "AddTodo"
+  title: "AddTodo",
 };
 
 export const addTodo = () => <AddTodo />;

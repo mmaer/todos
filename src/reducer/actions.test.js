@@ -9,7 +9,7 @@ describe("Actions", () => {
   const newTodo = {
     title: "new-todo",
     completed: false,
-    editing: false
+    editing: false,
   };
 
   it("Should return initial state", () => {
@@ -46,7 +46,7 @@ describe("Actions", () => {
     });
 
     expect(result.current.state).toEqual({
-      todos: [{ ...newTodo, completed: true }]
+      todos: [{ ...newTodo, completed: true }],
     });
   });
 
@@ -59,7 +59,7 @@ describe("Actions", () => {
     });
 
     expect(result.current.state).toEqual({
-      todos: [{ ...newTodo, editing: true }]
+      todos: [{ ...newTodo, editing: true }],
     });
   });
 
@@ -81,7 +81,7 @@ describe("Actions", () => {
       newTodo,
       { ...newTodo, completed: true },
       newTodo,
-      { ...newTodo, completed: true }
+      { ...newTodo, completed: true },
     ];
     const { result } = renderHook(() => useTodos(reducer, { todos }));
     act(() => {
@@ -101,8 +101,8 @@ describe("Actions", () => {
     expect(result.current.state).toEqual({
       todos: [
         { ...newTodo, completed: true },
-        { ...newTodo, completed: true }
-      ]
+        { ...newTodo, completed: true },
+      ],
     });
   });
 });

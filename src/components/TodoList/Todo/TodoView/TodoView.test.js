@@ -9,7 +9,7 @@ const TODO = {
   id: 1,
   removeTodo: () => {},
   toggleCompletedStatus: () => {},
-  toggleEditingStatus: () => {}
+  toggleEditingStatus: () => {},
 };
 
 describe("TodoView component", () => {

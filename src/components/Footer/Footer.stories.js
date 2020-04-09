@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import Footer from ".";
 
 export default {
-  title: "Footer"
+  title: "Footer",
 };
 
 const TODOS = [{ completed: false, active: true }];

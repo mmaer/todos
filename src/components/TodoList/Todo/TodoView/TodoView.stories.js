@@ -3,7 +3,7 @@ import React from "react";
 import TodoView from ".";
 
 export default {
-  title: "TodoView"
+  title: "TodoView",
 };
 
 const TODO = { title: "Todo", editing: false, completed: false, id: 1 };

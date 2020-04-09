@@ -11,14 +11,14 @@ const AddTodo = memo(({ addTodo }) => {
     setValue(target.value);
   };
 
-  const handleEnter = event => {
+  const handleEnter = (event) => {
     event.persist();
     if (event.which === ENTER_KEY) {
       if (value !== "") {
         addTodo({
           title: value,
           completed: false,
-          editing: false
+          editing: false,
         });
         setValue("");
       }

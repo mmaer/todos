@@ -49,7 +49,7 @@ const App = () => {
               <Route path="/" exact>
                 <TodoList todos={todos} filter={FILTER_ALL} {...actions} />
               </Route>
-              {FILTERS.map(filter => (
+              {FILTERS.map((filter) => (
                 <Route path={`/${filter}`} key={`todo-list-${filter}`}>
                   <TodoList todos={todos} filter={filter} {...actions} />
                 </Route>

@@ -23,7 +23,7 @@ const TodoEdit = memo(
       }
     };
 
-    const handleKeys = event => {
+    const handleKeys = (event) => {
       event.persist();
       if (event.keyCode === ENTER_KEY) {
         saveTodo();

@@ -18,7 +18,7 @@ describe("TodoEdit component", () => {
     id: 1,
     removeTodo: () => {},
     editTodoTitle: () => {},
-    toggleEditingStatus: () => {}
+    toggleEditingStatus: () => {},
   };
 
   const newTitle = "new-title";
